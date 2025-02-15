@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class ConexionBDD {
     java.sql.Connection conexion;
-    String urlDatabase = "jdbc:mysql://localhost/veterinaria_proyecto?autoReconnect=true&useSSL=false";
+    String urlDatabase = "jdbc:mysql://localhost:3306/veterinaria_proyecto";
      public java.sql.Connection conectar(){
         //LANZAR CÓDIGO DE PRUEBA 
         try {
@@ -26,6 +26,7 @@ public class ConexionBDD {
         } catch (ClassNotFoundException | SQLException e)//CAPTURAR ERRORES 
         {
              System.out.println("ERROR DE CONEXION A LA BASE DE DATOS");
+             System.out.println(e);
         }
         return conexion;
     }
