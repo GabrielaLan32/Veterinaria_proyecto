@@ -14,13 +14,14 @@ import java.sql.SQLException;
  */
 public class ConexionBDD {
     java.sql.Connection conexion;
+    String urlDatabase = "jdbc:mysql://localhost/veterinaria_proyecto?autoReconnect=true&useSSL=false";
      public java.sql.Connection conectar(){
         //LANZAR CÓDIGO DE PRUEBA 
         try {
             //Manera de Conexión a la Base de Datos
             Class.forName("com.mysql.jdbc.Driver");
             //Parámetros de conexión url/usuario/clave en mysql
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/veterinaria_proyecto?autoReconnect=true&useSSL=false","root","gaby321");
+            conexion=DriverManager.getConnection(urlDatabase,"root","gaby321");
             System.out.println("CONECTADO"); 
         } catch (ClassNotFoundException | SQLException e)//CAPTURAR ERRORES 
         {
